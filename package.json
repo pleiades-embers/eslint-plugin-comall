@@ -1,6 +1,6 @@
 {
   "name": "@comall/eslint-plugin-comall",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "comall自定义的eslint规则",
   "keywords": [
     "eslint",
@@ -40,4 +40,3 @@
     "access": "public"
   }
 }
-  
