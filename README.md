@@ -1,4 +1,5 @@
 # eslint-plugin-comall
+[![Build Status](https://app.travis-ci.com/comall-inc/eslint-plugin-comall.svg?branch=main)](https://app.travis-ci.com/comall-inc/eslint-plugin-comall)
 
 eslint plugin with comall private rules .
 
