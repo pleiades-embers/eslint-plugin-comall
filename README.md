@@ -1,47 +1,56 @@
 # eslint-plugin-comall
 [![Build Status](https://app.travis-ci.com/comall-inc/eslint-plugin-comall.svg?branch=main)](https://app.travis-ci.com/comall-inc/eslint-plugin-comall)
 
-eslint plugin with comall private rules .
+comall使用的内部eslint规则 .
 
-## Installation
+## 安装
 
-You'll first need to install [ESLint](https://eslint.org/):
+首先，你需要安装 [ESLint](https://eslint.org/):
 
 ```sh
 npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-comall`:
+然后，安装 `@comall/eslint-plugin-comall`:
 
 ```sh
-npm install eslint-plugin-comall --save-dev
+npm install @comall/eslint-plugin-comall --save-dev
 ```
 
-## Usage
+## 使用
 
-Add `comall` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+把 `@comall/comall` 添加到你的 `.eslintrc` 配置文件的插件列表中. 你可以省略 `eslint-plugin-` 前缀:
 
 ```json
 {
     "plugins": [
-        "comall"
+        "@comall/comall"
     ]
 }
 ```
 
 
-Then configure the rules you want to use under the rules section.
+然后，配置你想要启用的规则.
 
 ```json
 {
     "rules": {
-        "comall/rule-name": 2
+        "@comall/comall/rule-name": 2
     }
 }
 ```
 
-## Supported Rules
+或者，使用我们的推荐规则
+```json
+{
+    "extends":[
+        "plugin:@comall/comall/recommended"
+    ]
+}
+```
 
-* Fill in provided rules here
+## 支持的规则
+
+* no-expression-in-jsx-props
 
 
