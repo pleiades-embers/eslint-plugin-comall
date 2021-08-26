@@ -37,11 +37,17 @@ ruleTester.run("type-pascal", rule, {
       code: `enum foo {
         Bar = 0
       }`,
+      output:`enum Foo {
+        Bar = 0
+      }`,
       errors: [{ messageId:'TSEnumDeclaration'}],
     },
     {
       code: `enum Foo {
         bar = 0
+      }`,
+      output:`enum Foo {
+        Bar = 0
       }`,
       errors: [{ messageId:'TSEnumMember'}],
     },
@@ -49,16 +55,25 @@ ruleTester.run("type-pascal", rule, {
       code: `enum Foo {
         _bar = 0
       }`,
+      output:`enum Foo {
+        Bar = 0
+      }`,
       errors: [{ messageId:'TSEnumMember'}],
     },
     {
       code: `enum _Foo {
         Bar = 0
       }`,
+      output:`enum Foo {
+        Bar = 0
+      }`,
       errors: [{ messageId:'TSEnumDeclaration'}],
     },
     {
       code: `enum $Foo {
+        Bar = 0
+      }`,
+      output:`enum Foo {
         Bar = 0
       }`,
       errors: [{ messageId:'TSEnumDeclaration'}],
@@ -67,18 +82,29 @@ ruleTester.run("type-pascal", rule, {
       code: `enum $Foo {
         bar = 0
       }`,
+      output:`enum Foo {
+        Bar = 0
+      }`,
       errors: [{ messageId:'TSEnumDeclaration'},{messageId:'TSEnumMember'}],
     },
     {
       code:`interface fooBar {}`,
+      output:'interface FooBar {}',
+      errors:[{messageId:'TSInterfaceDeclaration'}]
+    },
+    {
+      code:`interface FOO_BAR {}`,
+      output:'interface FooBar {}',
       errors:[{messageId:'TSInterfaceDeclaration'}]
     },
     {
       code:'type fooBar = string',
+      output:'type FooBar = string',
       errors:[{messageId:'TSTypeAliasDeclaration'}]
     },
     {
       code:'class fooBar {}',
+      output:'class FooBar {}',
       errors:[{messageId:'ClassDeclaration'}] 
     }
   ],
