@@ -8,6 +8,7 @@
     "eslint-plugin"
   ],
   "author": "yefeng",
+  "files": ["lib"],
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
