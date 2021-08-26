@@ -52,5 +52,4 @@ npm install @comall/eslint-plugin-comall --save-dev
 ## 支持的规则
 
 * no-expression-in-jsx-props
-
-
+* type-pascal
