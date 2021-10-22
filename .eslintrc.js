@@ -16,4 +16,7 @@ module.exports = {
       env: { mocha: true },
     },
   ],
+  options: {
+    "node/shebang": ["error", {"convertPath": null}]
+  }
 };
