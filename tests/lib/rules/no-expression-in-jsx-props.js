@@ -32,6 +32,8 @@ ruleTester.run("no-expression-in-jsx-props", rule, {
     {code:'<div foo />'},
     {code:'<div foo={this} />'},
     {code:'<div foo={bar.baz} />'},
+    {code:'<div className={prefix} />'},
+    {code:'<Image className={`${prefix}__abc`} src={steeperImage} />'},
   ],
 
   invalid: [
@@ -99,5 +101,9 @@ ruleTester.run("no-expression-in-jsx-props", rule, {
       code:"<div foo={bar.bind(baz)} />",
       errors:[{messageId:'defaultMsg'}],
     },
+    {
+      code:"<div foo={aa || bb} />",
+      errors:[{messageId:'defaultMsg'}]
+    }
   ],
 });
