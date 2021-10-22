@@ -33,7 +33,7 @@ ruleTester.run("no-expression-in-jsx-props", rule, {
     {code:'<div foo={this} />'},
     {code:'<div foo={bar.baz} />'},
     {code:'<div className={prefix} />'},
-    {code:'<Image className={`${prefix}__abc`} src={steeperImage} />'},
+    {code:'<div className={`${prefix}__abc`} />'},
   ],
 
   invalid: [
