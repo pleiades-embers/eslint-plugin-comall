@@ -12,7 +12,7 @@ const rule = require("../../../lib/rules/no-expression-in-jsx-props"),
   RuleTester = require("eslint").RuleTester
 
   const parserOptions = {
-      ecmaVersion:2015,
+      ecmaVersion:2021,
       ecmaFeatures: {
         jsx: true
       }
@@ -32,6 +32,7 @@ ruleTester.run("no-expression-in-jsx-props", rule, {
     {code:'<div foo />'},
     {code:'<div foo={this} />'},
     {code:'<div foo={bar.baz} />'},
+    {code:'<div foo={bar?.baz} />'},
   ],
 
   invalid: [
@@ -84,7 +85,7 @@ ruleTester.run("no-expression-in-jsx-props", rule, {
       errors:[{messageId:'defaultMsg'}],
     },
     {
-      code:"<div foo={``} />",
+      code:"<div foo={`${bar}-baz`} />",
       errors:[{messageId:'defaultMsg'}],
     },
     {
