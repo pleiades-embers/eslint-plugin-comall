@@ -53,3 +53,4 @@ npm install @comall/eslint-plugin-comall --save-dev
 
 * no-expression-in-jsx-props
 * type-pascal
+* enum-initialize
